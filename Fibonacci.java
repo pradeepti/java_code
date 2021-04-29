@@ -29,19 +29,16 @@ public class Fibonacci {
 
 	}
 
-	private static int Iterative_recur(int n) {
-		int fib_sum = 0;
-		if (n == 0)
-			return n;
-		if (n == 1)
-			return n;
-		else {
-			while (n >= 0) {
-				fib_sum = fib_sum + n;
-				n--;
+	private static void Iterative_recur(int n) {
+		int prev1 = 0, prev2 = 1, temp;
 
-			}
-			return fib_sum;
+		System.out.print(prev1 + "\t" + prev2 + "\t");
+
+		for (int i = 0; i < n - 1; i++) {
+			temp = prev1;
+			prev1 = prev2;
+			prev2 = temp + prev2;
+			System.out.print(prev2 + "\t");
 		}
 	}
 
@@ -49,6 +46,6 @@ public class Fibonacci {
 		System.out.println("Fibonacci in recursive:");
 		System.out.println(Fibonacci_recur(20));
 		System.out.println("Fibonacci in iterative:");
-		System.out.println(Fibonacci_recur(20));
+		Iterative_recur(20);
 	}
 }
