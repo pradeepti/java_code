@@ -17,7 +17,6 @@ public class AnagramsTogether {
 			if (mymap.containsKey(newstr)) {
 				ArrayList<Integer> temp = mymap.get(newstr);
 				temp.add(i);
-				mymap.put(newstr, temp);
 			} else {
 				ArrayList<Integer> list = new ArrayList<Integer>();
 				list.add(i);
